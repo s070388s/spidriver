@@ -2,15 +2,8 @@
 
 set -e
 
-cd python
-if [[ $TRAVIS_OS_NAME == 'osx' ]];
-then
-  python setup.py install
-else
-  python setup.py install --user
-fi
-cd ..
-python -c 'from spidriver import SPIDriver' 
+python -m pip install ./python
+python -m unittest discover -s python/tests -v
 
 cd c
 make -f linux/Makefile

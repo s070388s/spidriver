@@ -1,0 +1,4 @@
+include LICENSE README.md
+recursive-include tests *.py
+recursive-include docs *.rst *.py *.jpg
+prune docs/_build

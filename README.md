@@ -1,6 +1,6 @@
 ![logo](/images/logo.png)
 
-[![Build Status](https://travis-ci.org/jamesbowman/spidriver.svg?branch=master)](https://travis-ci.org/jamesbowman/spidriver)
+[![Python tests](https://github.com/jamesbowman/spidriver/actions/workflows/python.yml/badge.svg)](https://github.com/jamesbowman/spidriver/actions/workflows/python.yml)
 [![Documentation Status](https://readthedocs.org/projects/spidriver/badge/?version=latest)](https://spidriver.readthedocs.io/en/latest/?badge=latest)
 
 Full documentation is at
@@ -13,7 +13,7 @@ and there are included drivers for
 
 * Windows/Mac/Linux GUI
 * Windows/Mac/Linux command-line
-* Python 2 and 3
+* Python 3.10+ (including SPIDriverQ support; see [Python driver](python/README.md))
 * Windows/Mac/Linux C/C++
 
 ![front](/images/DSC_1313a.JPG)
