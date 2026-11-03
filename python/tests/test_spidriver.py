@@ -80,10 +80,11 @@ class ConnectionTests(unittest.TestCase):
 
     def test_port_configuration_and_handshake(self):
         transport = Serial(b"\x55\x00\xff\xaa" + status())
+        port = Path("/dev/example")
         with patch("spidriver.serial.Serial", return_value=transport) as opened:
-            spi = SPIDriver(Path("/dev/example"), timeout=2, write_timeout=3)
+            spi = SPIDriver(port, timeout=2, write_timeout=3)
         opened.assert_called_once_with(
-            "/dev/example", 460800, timeout=2, write_timeout=3
+            str(port), 460800, timeout=2, write_timeout=3
         )
         self.assertEqual(transport.sent, b"@" * 64 + b"e\x55e\x00e\xffe\xaa?")
         with self.assertRaisesRegex(RuntimeError, "body"):
